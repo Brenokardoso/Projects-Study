@@ -65,6 +65,16 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  void drawnCountyOfTocantins() {
+    keyMapController1.drawRoadManually(
+      geoPointsForCountyOfTocantins,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
   BaseMapController drawRulesInMap() {
     Future.wait([
       Future.delayed(
@@ -78,6 +88,10 @@ class _MyAppState extends State<MyApp> {
       Future.delayed(
         Duration(milliseconds: 500),
         drawLimitBorderOnMap,
+      ),
+      Future.delayed(
+        Duration(milliseconds: 500),
+        drawnCountyOfTocantins,
       ),
     ]);
 
