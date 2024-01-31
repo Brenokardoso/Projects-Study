@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
-import 'geopointss_fot_tocantins.dart';
+import 'geopointss_for_consstruct_the_state_of_tocantins.dart';
 
 void main() {
   runApp(MyApp());
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       geoPointsForTocantins,
       RoadOption(
         roadColor: const Color.fromARGB(255, 15, 80, 132),
-        roadWidth: 5,
+        roadWidth: 2.5,
       ),
     );
   }
