@@ -98,7 +98,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void drawLimitBorderOnMap() {
+  void drawLimitBorderTocantinsOnMap() {
     keyMapController.drawRoadManually(
       geoPointsForTocantins,
       RoadOption(
@@ -108,7 +108,97 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void drawnCountyOfTocantins() async {
+  void drawnCountyOfPalmas() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfPalmas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOfAbreulandia() async {
+    keyMapController.drawRoadManually(
+      geoPointForCountyOfAbreulandia,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOfAguiarnopolis() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfAguiarnopolis,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOfAliancaDoTocantins() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfAliancaDoTocantins,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOfAlmas() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfAlmas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOfAnanas() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfAnanas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOf5() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfPalmas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOf6() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfPalmas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOf7() async {
+    keyMapController.drawRoadManually(
+      geoPointsForCountyOfPalmas,
+      RoadOption(
+        roadColor: Colors.black,
+        roadWidth: 2.5,
+      ),
+    );
+  }
+
+  void drawnCountyOf8() async {
     keyMapController.drawRoadManually(
       geoPointsForCountyOfPalmas,
       RoadOption(
@@ -126,12 +216,33 @@ class _MyAppState extends State<MyApp> {
     );
     Future.delayed(
       Duration(milliseconds: 500),
-      drawnCountyOfTocantins,
+      drawLimitBorderTocantinsOnMap,
     );
     Future.delayed(
       Duration(milliseconds: 500),
-      drawLimitBorderOnMap,
+      drawnCountyOfAbreulandia,
     );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfAguiarnopolis,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfAliancaDoTocantins,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfPalmas,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfAlmas,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfAnanas,
+    );
+
     Future.delayed(
       Duration(milliseconds: 500),
       addMarkersToMap,
