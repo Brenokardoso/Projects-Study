@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  MapController keyMapController1 = MapController(
+  MapController keyMapController = MapController(
     initPosition: GeoPoint(
       latitude: -8.95,
       longitude: -48.276669,
@@ -25,16 +25,24 @@ class _MyAppState extends State<MyApp> {
   );
   GlobalKey chaveGlobal = GlobalKey();
 
+  var _mapController;
+
   @override
   void dispose() {
-    keyMapController1.dispose();
+    keyMapController.dispose();
     super.dispose();
   }
 
-  Widget drawInitalMap() {
+  @override
+  void initState() {
+    super.initState();
+    keyMapController.init();
+  }
+
+  OSMFlutter _osmFlutterController() {
     return OSMFlutter(
       key: chaveGlobal,
-      controller: drawRulesInMap(),
+      controller: keyMapController,
       osmOption: OSMOption(
         userTrackingOption: UserTrackingOption(
           unFollowUser: false,
@@ -69,21 +77,18 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  @override
-  void initState() {
-    keyMapController1.init();
-    Future.delayed(Duration(seconds: 1), () {});
-    super.initState();
+  Widget drawInitalMap() {
+    return _osmFlutterController();
   }
 
   void addMarkersToMap() {
-    keyMapController1
+    keyMapController
       ..addMarker(GeoPoint(latitude: -8.05889, longitude: -48.47500))
       ..addMarker(GeoPoint(latitude: -10.6236, longitude: -48.2977));
   }
 
   void limitMapArea() {
-    keyMapController1.limitAreaMap(
+    keyMapController.limitAreaMap(
       BoundingBox(
         east: -45.54,
         north: -4.91,
@@ -94,7 +99,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void drawLimitBorderOnMap() {
-    keyMapController1.drawRoadManually(
+    keyMapController.drawRoadManually(
       geoPointsForTocantins,
       RoadOption(
         roadColor: const Color.fromARGB(255, 15, 80, 132),
@@ -104,7 +109,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void drawnCountyOfTocantins() async {
-    keyMapController1.drawRoadManually(
+    keyMapController.drawRoadManually(
       geoPointsForCountyOfPalmas,
       RoadOption(
         roadColor: Colors.black,
@@ -113,53 +118,24 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  // BaseMapController drawRulesInMap() {
-  //   Future.wait(
-  //     [
-  //       Future.delayed(
-  //         Duration(milliseconds: 500),
-  //         addMarkersToMap,
-  //       ),
-  //       Future.delayed(
-  //         Duration(milliseconds: 500),
-  //         limitMapArea,
-  //       ),
-  //       Future.delayed(
-  //         Duration(milliseconds: 500),
-  //         drawLimitBorderOnMap,
-  //       ),
-  //       Future.delayed(
-  //         Duration(milliseconds: 500),
-  //         drawnCountyOfTocantins,
-  //       ),
-  //     ],
-  //   );
-
-  //   return keyMapController1;
-  // }
-  BaseMapController drawRulesInMap() {
-    Future.wait(
-      [
-        Future.delayed(
-          Duration(milliseconds: 500),
-          addMarkersToMap,
-        ),
-        Future.delayed(
-          Duration(milliseconds: 500),
-          limitMapArea,
-        ),
-        Future.delayed(
-          Duration(milliseconds: 500),
-          drawLimitBorderOnMap,
-        ),
-        Future.delayed(
-          Duration(milliseconds: 500),
-          drawnCountyOfTocantins,
-        ),
-      ],
+  Future<void> drawnTheRulesOnMap() async {
+    keyMapController.init();
+    Future.delayed(
+      Duration(milliseconds: 500),
+      limitMapArea,
     );
-
-    return keyMapController1;
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawnCountyOfTocantins,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      drawLimitBorderOnMap,
+    );
+    Future.delayed(
+      Duration(milliseconds: 500),
+      addMarkersToMap,
+    );
   }
 
   @override
@@ -167,7 +143,48 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: '',
       theme: ThemeData.dark(),
-      home: drawInitalMap(),
+      debugShowCheckedModeBanner: false,
+      home: FutureBuilder(
+        future: drawnTheRulesOnMap(),
+        builder: (context, snapshot) {
+          print("ESTADO DA CONEXÃO : ${snapshot.connectionState.toString()}");
+          switch (snapshot.connectionState) {
+            case (ConnectionState.none):
+              return Text("Nenhum Estado");
+
+            case (ConnectionState.waiting):
+              return CircularProgressIndicator(
+                backgroundColor: const Color.fromARGB(255, 20, 73, 165),
+              );
+
+            case (ConnectionState.active):
+              return Text("Estado está ativo!");
+
+            case (ConnectionState.done):
+              if (snapshot.hasData) {
+                print("Tem dados" * 100);
+                try {
+                  return drawInitalMap();
+                } //
+                catch (error) {
+                  print("Não tem dados" * 100);
+                  throw Exception("Houve uma exceção por motivos de $error");
+                } //
+                finally {
+                  print(
+                      "ESTADO FINAL DA CONEXÃO : ${snapshot.connectionState.toString()}");
+                }
+              }
+              if (snapshot.hasError) {
+                throw Exception(
+                    "Houve uma exceção por motivos de ${snapshot.error}");
+              }
+          }
+          return Center(
+            child: drawInitalMap(),
+          );
+        },
+      ),
     );
   }
 }
