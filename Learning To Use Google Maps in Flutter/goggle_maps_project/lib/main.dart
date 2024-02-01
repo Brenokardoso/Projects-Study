@@ -31,6 +31,44 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
+  Widget drawInitalMap() {
+    return OSMFlutter(
+      key: chaveGlobal,
+      controller: drawRulesInMap(),
+      osmOption: OSMOption(
+        userTrackingOption: UserTrackingOption(
+          unFollowUser: false,
+          enableTracking: false,
+        ),
+        userLocationMarker: UserLocationMaker(
+          personMarker: MarkerIcon(
+            icon: Icon(Icons.person_pin_circle_outlined),
+          ),
+          directionArrowMarker: MarkerIcon(
+            icon: Icon(Icons.person_pin_circle_outlined),
+          ),
+        ),
+        roadConfiguration: RoadOption(
+          roadColor: Colors.red,
+        ),
+        markerOption: MarkerOption(
+          defaultMarker: MarkerIcon(
+            icon: Icon(
+              Icons.person_pin_circle_outlined,
+            ),
+          ),
+        ),
+        zoomOption: ZoomOption(
+          initZoom: 7.5,
+          minZoomLevel: 5,
+          maxZoomLevel: 18,
+          stepZoom: 1.5,
+        ),
+      ),
+      onGeoPointClicked: (p0) => print('Olha o clique "Sons de Reaggue"'),
+    );
+  }
+
   @override
   void initState() {
     keyMapController1.init();
@@ -65,9 +103,9 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void drawnCountyOfTocantins() {
+  void drawnCountyOfTocantins() async {
     keyMapController1.drawRoadManually(
-      geoPointsForCountyOfTocantins,
+      geoPointsForCountyOfPalmas,
       RoadOption(
         roadColor: Colors.black,
         roadWidth: 2.5,
@@ -75,25 +113,51 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  // BaseMapController drawRulesInMap() {
+  //   Future.wait(
+  //     [
+  //       Future.delayed(
+  //         Duration(milliseconds: 500),
+  //         addMarkersToMap,
+  //       ),
+  //       Future.delayed(
+  //         Duration(milliseconds: 500),
+  //         limitMapArea,
+  //       ),
+  //       Future.delayed(
+  //         Duration(milliseconds: 500),
+  //         drawLimitBorderOnMap,
+  //       ),
+  //       Future.delayed(
+  //         Duration(milliseconds: 500),
+  //         drawnCountyOfTocantins,
+  //       ),
+  //     ],
+  //   );
+
+  //   return keyMapController1;
+  // }
   BaseMapController drawRulesInMap() {
-    Future.wait([
-      Future.delayed(
-        Duration(milliseconds: 500),
-        addMarkersToMap,
-      ),
-      Future.delayed(
-        Duration(milliseconds: 500),
-        limitMapArea,
-      ),
-      Future.delayed(
-        Duration(milliseconds: 500),
-        drawLimitBorderOnMap,
-      ),
-      Future.delayed(
-        Duration(milliseconds: 500),
-        drawnCountyOfTocantins,
-      ),
-    ]);
+    Future.wait(
+      [
+        Future.delayed(
+          Duration(milliseconds: 500),
+          addMarkersToMap,
+        ),
+        Future.delayed(
+          Duration(milliseconds: 500),
+          limitMapArea,
+        ),
+        Future.delayed(
+          Duration(milliseconds: 500),
+          drawLimitBorderOnMap,
+        ),
+        Future.delayed(
+          Duration(milliseconds: 500),
+          drawnCountyOfTocantins,
+        ),
+      ],
+    );
 
     return keyMapController1;
   }
@@ -103,41 +167,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: '',
       theme: ThemeData.dark(),
-      home: OSMFlutter(
-        key: chaveGlobal,
-        controller: drawRulesInMap(),
-        osmOption: OSMOption(
-          userTrackingOption: UserTrackingOption(
-            unFollowUser: false,
-            enableTracking: false,
-          ),
-          userLocationMarker: UserLocationMaker(
-            personMarker: MarkerIcon(
-              icon: Icon(Icons.person_pin_circle_outlined),
-            ),
-            directionArrowMarker: MarkerIcon(
-              icon: Icon(Icons.person_pin_circle_outlined),
-            ),
-          ),
-          roadConfiguration: RoadOption(
-            roadColor: Colors.red,
-          ),
-          markerOption: MarkerOption(
-            defaultMarker: MarkerIcon(
-              icon: Icon(
-                Icons.person_pin_circle_outlined,
-              ),
-            ),
-          ),
-          zoomOption: ZoomOption(
-            initZoom: 7.5,
-            minZoomLevel: 5,
-            maxZoomLevel: 18,
-            stepZoom: 1.5,
-          ),
-        ),
-        onGeoPointClicked: (p0) => print('Olha o clique "Sons de Reaggue"'),
-      ),
+      home: drawInitalMap(),
     );
   }
 }
