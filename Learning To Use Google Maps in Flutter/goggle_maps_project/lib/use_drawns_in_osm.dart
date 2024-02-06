@@ -175,6 +175,59 @@ Future<void> drawnTheRulesOnMap() async {
   Future.delayed(Duration(milliseconds: 500), drawnCountyOfPalmas);
 
 // Citys With - R
+
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfRecursoLandia);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfRiachiho);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfRioDaConceicao);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfRioDosBois);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfRioSono);
+
+// Citys With - S
+
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSamapio);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSandolandia);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSantaFeDoAraguaia);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSantaMariaDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSantaRitaDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSantaRosaDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSantaTerezaDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSantaTerezinhaDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSaoBentoDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSaoFelixDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSaoMiguelDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSaoSalvadorDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSaoSebastiaoDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfSaoValerioDaNatividade);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSilvanopolis);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSitiNovoDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfSucupira);
+
+// Citys With - T
+
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTaguatinga);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTaipasDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOftalisma);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTocantinia);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTocantinopolis);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTupirama);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfTupiratins);
+
+// Citys With - W
+
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfWanderlandia);
+
+// Citys With - X
+
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfXambioa);
 }
 
 void addMarkersToMap() {
