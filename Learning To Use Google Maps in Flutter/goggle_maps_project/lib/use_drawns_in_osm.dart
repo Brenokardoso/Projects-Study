@@ -1311,3 +1311,321 @@ void drawnCountyOfPalmas() async {
 }
 
 // Citys With - R
+
+void drawnCountyOfRecursoLandia() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfRecursoLandia,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfRiachiho() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfRiachinho,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfRioDaConceicao() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfRioDaConceicao,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfRioDosBois() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfRioDosBois,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfRioSono() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfRioSonos,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+// Citys With - S
+
+void drawnCountyOfSamapio() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSampaio,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSandolandia() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSandolandia,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaFeDoAraguaia() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaFeDoAraguaia,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaMariaDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaMariaDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaRitaDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaRitaDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaRosaDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaRosaDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaTerezaDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaTerezaDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSantaTerezinhaDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSantaTerezinhaDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoBentoDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoBentoDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoFelixDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoFelixDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoMiguelDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoMiguelDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoSalvadorDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoSalvadorDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoSebastiaoDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoSebastiaoDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSaoValerioDaNatividade() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSaoValerioDaNatividade,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSilvanopolis() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSilvanopolis,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSitiNovoDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSitiNovoDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfSucupira() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfSucupira,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+// Citys With - T
+
+void drawnCountyOfTaguatinga() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTaguatinga,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfTaipasDoTocantins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTaipasDoTocantins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOftalisma() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTalisma,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfTocantinia() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTocantinea,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfTocantinopolis() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTocantinopolis,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfTupirama() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTupirama,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+void drawnCountyOfTupiratins() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfTupiratins,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+// Citys With - W
+
+void drawnCountyOfWanderlandia() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfWanderlandia,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
+
+// Citys With - X
+
+void drawnCountyOfXambioa() async {
+  keyMapController.drawRoadManually(
+    geoPointsForCountyOfXambioa,
+    RoadOption(
+      roadColor: Colors.black,
+      roadWidth: 1.5,
+    ),
+  );
+}
