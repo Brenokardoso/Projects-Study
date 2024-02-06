@@ -158,7 +158,23 @@ Future<void> drawnTheRulesOnMap() async {
   Future.delayed(Duration(milliseconds: 500), drawnCountyOfPauDaArco);
   Future.delayed(Duration(milliseconds: 500), drawnCountyOfPedroAfonso);
   Future.delayed(Duration(milliseconds: 500), drawnCountyOfPeixe);
-  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPequizeiro);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPidorama);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPiraque);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPium);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfPontePonteAltaDoBomJesus);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfPonteAltaDoTocantins);
+  Future.delayed(
+      Duration(milliseconds: 500), drawnCountyOfPortoAlegreDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPortoNacional);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPraiaNorte);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPresidenteKeneddy);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPugil);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPalmeiraDoTocantins);
+  Future.delayed(Duration(milliseconds: 500), drawnCountyOfPalmas);
+
+// Citys With - R
 }
 
 void addMarkersToMap() {
@@ -184,16 +200,6 @@ void drawLimitBorderTocantinsOnMap() {
     RoadOption(
       roadColor: const Color.fromARGB(255, 15, 80, 132),
       roadWidth: 5.0,
-    ),
-  );
-}
-
-void drawnCountyOfPalmas() async {
-  keyMapController.drawRoadManually(
-    geoPointsForCountyOfPalmas,
-    RoadOption(
-      roadColor: Colors.black,
-      roadWidth: 1.5,
     ),
   );
 }
@@ -1234,7 +1240,6 @@ void drawnCountyOfPonteAltaDoTocantins() async {
   );
 }
 
-
 void drawnCountyOfPortoAlegreDoTocantins() async {
   keyMapController.drawRoadManually(
     geoPointsForCountyOfPortoAlegreDoTocantins,
@@ -1244,7 +1249,6 @@ void drawnCountyOfPortoAlegreDoTocantins() async {
     ),
   );
 }
-
 
 void drawnCountyOfPortoNacional() async {
   keyMapController.drawRoadManually(
@@ -1256,7 +1260,6 @@ void drawnCountyOfPortoNacional() async {
   );
 }
 
-
 void drawnCountyOfPraiaNorte() async {
   keyMapController.drawRoadManually(
     geoPointsForCountyOfPraiaNorte,
@@ -1266,7 +1269,6 @@ void drawnCountyOfPraiaNorte() async {
     ),
   );
 }
-
 
 void drawnCountyOfPresidenteKeneddy() async {
   keyMapController.drawRoadManually(
@@ -1278,8 +1280,6 @@ void drawnCountyOfPresidenteKeneddy() async {
   );
 }
 
-
-
 void drawnCountyOfPugil() async {
   keyMapController.drawRoadManually(
     geoPointsForCountyOfPugil,
@@ -1289,7 +1289,6 @@ void drawnCountyOfPugil() async {
     ),
   );
 }
-
 
 void drawnCountyOfPalmeiraDoTocantins() async {
   keyMapController.drawRoadManually(
@@ -1301,7 +1300,6 @@ void drawnCountyOfPalmeiraDoTocantins() async {
   );
 }
 
-
 void drawnCountyOfPalmas() async {
   keyMapController.drawRoadManually(
     geoPointsForCountyOfPalmas,
@@ -1312,3 +1310,4 @@ void drawnCountyOfPalmas() async {
   );
 }
 
+// Citys With - R
