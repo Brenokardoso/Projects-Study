@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
-
-import 'geopointss_for_consstruct_the_state_of_tocantins.dart';
+import 'use_drawns_in_osm.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,15 +16,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  MapController keyMapController = MapController(
-    initPosition: GeoPoint(
-      latitude: -8.95,
-      longitude: -48.276669,
-    ),
-  );
   GlobalKey chaveGlobal = GlobalKey();
-
-  var _mapController;
 
   @override
   void dispose() {
@@ -67,10 +58,10 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         zoomOption: ZoomOption(
-          initZoom: 7.5,
+          initZoom: 7.35,
           minZoomLevel: 5,
           maxZoomLevel: 18,
-          stepZoom: 1.5,
+          stepZoom: 20,
         ),
       ),
       onGeoPointClicked: (p0) => print('Olha o clique "Sons de Reaggue"'),
@@ -81,174 +72,6 @@ class _MyAppState extends State<MyApp> {
     return _osmFlutterController();
   }
 
-  void addMarkersToMap() {
-    keyMapController
-      ..addMarker(GeoPoint(latitude: -8.05889, longitude: -48.47500))
-      ..addMarker(GeoPoint(latitude: -10.6236, longitude: -48.2977));
-  }
-
-  void limitMapArea() {
-    keyMapController.limitAreaMap(
-      BoundingBox(
-        east: -45.54,
-        north: -4.91,
-        south: -13.60,
-        west: -50.98,
-      ),
-    );
-  }
-
-  void drawLimitBorderTocantinsOnMap() {
-    keyMapController.drawRoadManually(
-      geoPointsForTocantins,
-      RoadOption(
-        roadColor: const Color.fromARGB(255, 15, 80, 132),
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfPalmas() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfPalmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfAbreulandia() async {
-    keyMapController.drawRoadManually(
-      geoPointForCountyOfAbreulandia,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfAguiarnopolis() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfAguiarnopolis,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfAliancaDoTocantins() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfAliancaDoTocantins,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfAlmas() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfAlmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOfAnanas() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfAnanas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOf5() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfPalmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOf6() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfPalmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOf7() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfPalmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  void drawnCountyOf8() async {
-    keyMapController.drawRoadManually(
-      geoPointsForCountyOfPalmas,
-      RoadOption(
-        roadColor: Colors.black,
-        roadWidth: 2.5,
-      ),
-    );
-  }
-
-  Future<void> drawnTheRulesOnMap() async {
-    keyMapController.init();
-    Future.delayed(
-      Duration(milliseconds: 500),
-      limitMapArea,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawLimitBorderTocantinsOnMap,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfAbreulandia,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfAguiarnopolis,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfAliancaDoTocantins,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfPalmas,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfAlmas,
-    );
-    Future.delayed(
-      Duration(milliseconds: 500),
-      drawnCountyOfAnanas,
-    );
-
-    Future.delayed(
-      Duration(milliseconds: 500),
-      addMarkersToMap,
-    );
-  }
-
   @override
   build(BuildContext context) {
     return MaterialApp(
@@ -257,9 +80,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
         future: drawnTheRulesOnMap(),
-        builder: (context, snapshot) {
-          print("ESTADO DA CONEXÃO : ${snapshot.connectionState.toString()}");
-          switch (snapshot.connectionState) {
+        builder: (context, connectionResult) {
+          print(
+              "ESTADO DA CONEXÃO : ${connectionResult.connectionState.toString()}");
+          switch (connectionResult.connectionState) {
             case (ConnectionState.none):
               return Text("Nenhum Estado");
 
@@ -272,7 +96,7 @@ class _MyAppState extends State<MyApp> {
               return Text("Estado está ativo!");
 
             case (ConnectionState.done):
-              if (snapshot.hasData) {
+              if (connectionResult.hasData) {
                 print("Tem dados" * 100);
                 try {
                   return drawInitalMap();
@@ -283,12 +107,12 @@ class _MyAppState extends State<MyApp> {
                 } //
                 finally {
                   print(
-                      "ESTADO FINAL DA CONEXÃO : ${snapshot.connectionState.toString()}");
+                      "ESTADO FINAL DA CONEXÃO : ${connectionResult.connectionState.toString()}");
                 }
               }
-              if (snapshot.hasError) {
+              if (connectionResult.hasError) {
                 throw Exception(
-                    "Houve uma exceção por motivos de ${snapshot.error}");
+                    "Houve uma exceção por motivos de ${connectionResult.error}");
               }
           }
           return Center(
