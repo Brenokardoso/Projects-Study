@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
-import 'dart:convert';
 
 List<GeoPoint> convertToGeoPoints(List<List<double>> data) {
   List<GeoPoint> geoPoints = [];
